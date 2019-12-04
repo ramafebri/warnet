@@ -40,29 +40,24 @@
 <body>
 
     <div class="wrapper">
-        <h2 >Tambah Pemilik</h2>
-        <p>Please fill this form to add new owner.</p>
+        <h2 >Tambah Ruangan</h2>
+        <p>Please fill this form to add new Room.</p>
         <form action=" action/aksitambahpemilik.php" method="post">
             <div class="form-group ">
-                <label>Nama Pemilik</label>
-                <input type="text" name="nama_pemilik" class="form-control">
+                <label>Nama Ruangan</label>
+                <input type="text" name="nama_ruangan" class="form-control">
                 <span class="help-block"></span>
             </div>
             <div class="form-group ">
-                <label>No Telp</label>
-                <input type="text" name="no_hp_pemilik" class="form-control">
+                <label>Jenis Ruangan</label>
+                <input type="text" name="jenis_ruangan" class="form-control">
                 <span class="help-block"></span>
             </div>       
-            <div class="form-group ">
-                <label>Tempat Tinggal</label>
-                <input type="text" name="tempat_tinggal" class="form-control">
-                <span class="help-block"></span>
-            </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
+            
         </form>
     </div>    
 </body>

@@ -90,7 +90,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<td><?php echo $row['idruangan']; ?></td>
 						<td><?php echo $row['nama_ruangan']; ?></td>
 						<td><?php echo $row['jenis_ruangan']; ?></td>
-						<td><a href='action/aksideletepemilik.php?id_pemilik=<?php echo $row['id_pemilik'] ?>' class='btn btn-danger'>
+						<td><a href='action/aksideletepemilik.php?idruangan=<?php echo $row['idruangan'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								</tr>
 								<?php
@@ -102,7 +102,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 
-					<a href="tambahpemilik.php" class="login" style="margin:10px;"><span>Tambah Pemilik</span></a>
+					<a href="tambahpemilik.php" class="login" style="margin:10px;"><span>Tambah Ruangan</span></a>
 
 				</div>
 				<footer class="site-footer">

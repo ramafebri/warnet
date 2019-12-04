@@ -2,15 +2,14 @@
 include "koneksi.php";
 
 if (!empty($_POST)) {
-	if (isset($_POST['nama_pemilik']) && isset($_POST['no_hp_pemilik']) && isset($_POST['tempat_tinggal'])) {
+	if (isset($_POST['nama_ruangan']) && isset($_POST['jenis_ruangan'])) {
 		//inisialisasi variabel
-		$nama_pemilik = filter_input(INPUT_POST, 'nama_pemilik', FILTER_SANITIZE_STRING);
-		$no_hp_pemilik = filter_input(INPUT_POST, 'no_hp_pemilik', FILTER_SANITIZE_STRING);
-		$tempat_tinggal = filter_input(INPUT_POST, 'tempat_tinggal', FILTER_SANITIZE_STRING);
+		$$no_hp_pemilik = filter_input(INPUT_POST, 'nama_ruangan', FILTER_SANITIZE_STRING);
+		$tempat_tinggal = filter_input(INPUT_POST, 'jenis_ruangan', FILTER_SANITIZE_STRING);
 
 
 
-		$query = mysqli_query($link, "insert into pemilik(nama_pemilik,no_hp_pemilik,tempat_tinggal) values ('$nama_pemilik', '$no_hp_pemilik','$tempat_tinggal')");
+		$query = mysqli_query($link, "insert into ruangan(nama_ruangan,jenis_ruangan) values ('$no_hp_pemilik','$tempat_tinggal')");
 		if($query) {
 			header('location: ../halamanpemilik.php');
 		} else {

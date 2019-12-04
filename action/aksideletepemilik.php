@@ -1,9 +1,9 @@
 <?php
 include "koneksi.php";
 
-$id_pemilik = $_GET['id_pemilik'];
-$query = mysqli_query($link, "delete from pemilik
-	where id_pemilik = '$id_pemilik'
+$id_pemilik = $_GET['idruangan'];
+$query = mysqli_query($link, "delete from ruangan
+	where idruangan = '$id_pemilik'
 ")or die(mysqli_error($link));
 
 if($query) {

@@ -20,9 +20,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 	<div class="koko">	
-		<img src="img/background7.jpg" class="img-fluid" alt="Responsive image">
+		<img src="img/background10.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Informasi Pelanggan</h1>
+			<h1 style="font-size: 60px;">Jadwal SeeWarnet</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -59,7 +59,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="luar" id="luar">
 
 		<div class="wrap" style="display: flex;}">
-			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Informasi Pelanggan</h1>
+			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Jadwal Pelanggan</h1>
 			<form method="POST" action="searchkost.php" class="aqaqa">
 				<div class="search" style="float: right; margin-left: 600px; margin-top: 29px;width: 100%;position: relative;display: flex;">
 					<input type="text" name="search" class="searchTerm" placeholder="What are you looking for?" style="width: 100%;border: 3px solid #00B4CC;border-right: none;padding: 15px;height: 20px;border-radius: 5px 0 0 5px;outline: none;color: #9DBFAF;">
@@ -72,12 +72,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<table class="makanan" style="text-align: center;">
 			<tr>
 			
-				<th>Nama Pelanggan</th>
-				<th>Username</th>
-				<th>Password</th>
-				<th>Jenis Kelamin</th>
-				<th>No Telepon</th>
-				<th>Alamat</th>
+				<th>No</th>
+				<th>Hari</th>
+				<th>Nama Operator</th>
 				<th>Aksi</th>
 			
 			</tr>
@@ -85,18 +82,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from member;
+				select * from jadwal;
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
 					?>
 					<tr>
-						<td><?php echo $row['nama']; ?></td>
-						<td><?php echo $row['username']; ?></td>
-						<td><?php echo $row['password']; ?></td>
-						<td><?php echo $row['jenis_kelamin']; ?></td>
-						<td><?php echo $row['notelp']; ?></td>
-						<td><?php echo $row['alamat']; ?></td>
+						<td><?php echo $row['idhari']; ?></td>
+						<td><?php echo $row['hari']; ?></td>
+						<td><?php echo $row['nama_operator']; ?></td>
 						<td><a href='editkost.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
 							<a href='action/aksideletekost.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-danger'>
