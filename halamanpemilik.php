@@ -35,14 +35,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> profile </a>
+				<a href="halamankost.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Informasi </a> 
+				<a href="halamansewa.php"> Jadwal </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Jadwal </a> 
+				<a href="halamanpemilik.php"> Ruangan </a> 
 			</div>	
 		</div>
 		
