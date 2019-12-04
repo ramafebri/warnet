@@ -42,7 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<a href="halamansewa.php"> Informasi </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Pemilik </a> 
+				<a href="halamanpemilik.php"> Jadwal </a> 
 			</div>	
 		</div>
 		
@@ -72,9 +72,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<table class="makanan" style="text-align: center;">
 			<tr>
 				<th>No</th>
-				<th>Nama Pemilik</th>
-				<th>No Telp</th>
-				<th>Tempat Tinggal</th>
+				<th>Nama Ruangan</th>
+				<th>Jenis Ruangan</th>
 				<th>Aksi</th>
 				
 			</tr>
@@ -82,17 +81,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select id_pemilik ,nama_pemilik, no_hp_pemilik, tempat_tinggal
-				from pemilik 
+				select * from ruangan 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
 					?>
 					<tr>
-						<td><?php echo $row['id_pemilik']; ?></td>
-						<td><?php echo $row['nama_pemilik']; ?></td>
-						<td><?php echo $row['no_hp_pemilik']; ?></td>
-						<td><?php echo $row['tempat_tinggal']; ?></td>
+						<td><?php echo $row['idruangan']; ?></td>
+						<td><?php echo $row['nama_ruangan']; ?></td>
+						<td><?php echo $row['jenis ruangan']; ?></td>
 						<td><a href='action/aksideletepemilik.php?id_pemilik=<?php echo $row['id_pemilik'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								</tr>

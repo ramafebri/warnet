@@ -41,7 +41,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<a href="halamansewa.php"> Informasi </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Pemilik </a> 
+				<a href="halamanpemilik.php"> Jadwal </a> 
 			</div>	
 		</div>
 		
