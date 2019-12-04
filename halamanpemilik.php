@@ -20,9 +20,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
 	<div class="koko">	
-		<img src="img/background8.jpg" class="img-fluid" alt="Responsive image">
+		<img src="img/background9.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Pemilik Kostan</h1>
+			<h1 style="font-size: 60px;">Ruangan Warnet</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -59,7 +59,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="luar" id="luar">
 
 		<div class="wrap" style="display: flex;}">
-			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Informasi Pemilik Kost</h1>
+			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Informasi Ruangan</h1>
 			<form method="POST" action="searchkost.php" class="aqaqa">
 				<div class="search" style="float: right; margin-left: 600px; margin-top: 29px;width: 100%;position: relative;display: flex;">
 					<input type="text" name="search" class="searchTerm" placeholder="What are you looking for?" style="width: 100%;border: 3px solid #00B4CC;border-right: none;padding: 15px;height: 20px;border-radius: 5px 0 0 5px;outline: none;color: #9DBFAF;">
@@ -89,7 +89,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 					<tr>
 						<td><?php echo $row['idruangan']; ?></td>
 						<td><?php echo $row['nama_ruangan']; ?></td>
-						<td><?php echo $row['jenis ruangan']; ?></td>
+						<td><?php echo $row['jenis_ruangan']; ?></td>
 						<td><a href='action/aksideletepemilik.php?id_pemilik=<?php echo $row['id_pemilik'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								</tr>
