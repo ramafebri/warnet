@@ -4,7 +4,7 @@ include "koneksi.php";
 if (!empty($_POST)) {
 	if (isset($_POST['nama_ruangan']) && isset($_POST['jenis_ruangan'])) {
 		//inisialisasi variabel
-		$$no_hp_pemilik = filter_input(INPUT_POST, 'nama_ruangan', FILTER_SANITIZE_STRING);
+		$no_hp_pemilik = filter_input(INPUT_POST, 'nama_ruangan', FILTER_SANITIZE_STRING);
 		$tempat_tinggal = filter_input(INPUT_POST, 'jenis_ruangan', FILTER_SANITIZE_STRING);
 
 
