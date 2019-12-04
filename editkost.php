@@ -1,15 +1,16 @@
 <?php
 //isikan dengan query select data
 include "action/koneksi.php";
-$id_kost = $_GET['id_kost'];
-$query = mysqli_query($link, "select * from kostan where id_kost='$id_kost'") or die(mysqli_error($link));
+$idpelanggan = $_GET['idpelanggan'];
+$query = mysqli_query($link, "select * from member where idpelanggan='$idpelanggan'") or die(mysqli_error($link));
 
 while ($res = mysqli_fetch_array($query)) {
-    $nama_kost = $res['nama_kost'];
+    $nama = $res['nama'];
     $alamat = $res['alamat'];
-    $jumlah_kamar = $res['jumlah_kamar'];
-    $harga_kamar = $res['harga_kamar'];
-    $id_pemilik = $res['id_pemilik'];
+    $username = $res['username'];
+    $password = $res['password'];
+    $jk = $res['jenis_kelamin'];
+    $notelp = $res['notelp'];
 }
 ?>
 <!DOCTYPE html>
@@ -53,45 +54,44 @@ while ($res = mysqli_fetch_array($query)) {
 <body>
 
     <div class="wrapper">
-        <h2 >Edit Kost</h2>
+        <h2 >Edit Pelanggan</h2>
         <p>Please fill this form to edit kostan.</p>
-        <form action=" action/aksieditkost.php?id_kost=<?php echo  $id_kost;  ?>" method="post">
+        <form action=" action/aksieditkost.php?idpelanggan=<?php echo  $idpelanggan;  ?>" method="post">
             <div class="form-group ">
-                <label>ID Kost</label>
-                <input value="<?php echo $id_kost; ?>" type="text" name="id_kost" class="form-control" value="<?php echo $row['id__kost']; ?>" disabled>
+                <label>ID Pelanggan</label>
+                <input value="<?php echo $idpelanggan; ?>" type="text" name="id_pelanggan" class="form-control" value="<?php echo $idpelanggan ?>" disabled>
                 <span class="help-block"></span>
             </div> 
             <div class="form-group ">
-                <label>Nama kost</label>
-                <input value="<?php echo $nama_kost; ?>" type="text" name="nama_kost" class="form-control" value="<?php echo $row['nama_kost']; ?>">
+                <label>Nama</label>
+                <input value="<?php echo $nama; ?>" type="text" name="nama" class="form-control" value="<?php echo $nama ?>">
                 <span class="help-block"></span>
             </div>
             <div class="form-group ">
                 <label>Alamat</label>
-                <input value="<?php echo $alamat; ?>" type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>">
+                <input value="<?php echo $alamat; ?>" type="text" name="alamat" class="form-control" value="<?php echo $alamat ?>">
                 <span class="help-block"></span>
             </div>       
             <div class="form-group ">
-                <label>Jumlah Kamar</label>
-                <input value="<?php echo $jumlah_kamar; ?>" type="text" name="jumlah_kamar" class="form-control" value="<?php echo $row['jumlah_kamar']; ?>">
+                <label>Username</label>
+                <input value="<?php echo $username; ?>" type="text" name="username" class="form-control" value="<?php echo $username ?>">
                 <span class="help-block"></span>
             </div>
             <div class="form-group ">
-                <label>Harga Kamar</label>
-                <input value="<?php echo $harga_kamar; ?>" type="text" name="harga_kamar" class="form-control" value="<?php echo $row['harga_kamar']; ?>">
+                <label>Password</label>
+                <input value="<?php echo $password; ?>" type="text" name="password" class="form-control" value="<?php echo $password ?>">
                 <span class="help-block"></span>
             </div>   
             <div class="form-group ">
-                    <label>ID Pemilik</label>
-                    <select class="form-control" name='id_pemilik' style="border:1px;border-radius: 30px;">
-                        <?php include "action/koneksi.php"; 
-                        $query = "SELECT * FROM Pemilik"; 
-                        $result = mysqli_query($link, $query) or die(mysqli_error($link)); 
-                        while  ($row   = mysqli_fetch_array($result)) { ?>
-                            <option value="<?php    echo    $row['id_pemilik'];   ?>"><?php   echo $row['id_pemilik']; ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
+                <label>Jenis Kelamin</label>
+                <input value="<?php echo $jk; ?>" type="text" name="jenis_kelamin" class="form-control" value="<?php echo $jk ?>">
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group ">
+                <label>No telp</label>
+                <input value="<?php echo $notelp; ?>" type="text" name="notelp" class="form-control" value="<?php echo $notelp ?>">
+                <span class="help-block"></span>
+            </div> 
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">

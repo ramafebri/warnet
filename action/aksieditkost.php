@@ -1,7 +1,7 @@
 <?php
 include "koneksi.php";
 if (!empty($_POST)) {
-if (isset($_POST['nama_kost']) && isset($_POST['alamat']) && isset($_POST['jumlah_kamar']) && isset($_POST['harga_kamar']) && isset($_POST['id_pemilik'])) {
+if (isset($_POST['nama']) && isset($_POST['alamat']) && isset($_POST['jumlah_kamar']) && isset($_POST['harga_kamar']) && isset($_POST['id_pemilik'])) {
 //inisialisasi variabel
 $id_kost = $_GET['id_kost'];
 $nama_kost = filter_input(INPUT_POST, 'nama_kost', FILTER_SANITIZE_STRING);

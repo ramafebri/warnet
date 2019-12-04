@@ -84,10 +84,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<td><?php echo $row['jenis_kelamin']; ?></td>
 						<td><?php echo $row['notelp']; ?></td>
 						<td><?php echo $row['alamat']; ?></td>
-						<td><a href='action/aksideletesewa.php?id=<?php echo $row['id_sewa'] ?>' class='btn btn-success'>
-							<span class='glyphicon glyphicon-edit'></span>Sewa</button></a>
-							</td>
-								</tr>
+						<td><a href='editkost.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-success'>
+							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
+							<a href='action/aksideletekost.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-danger'>
+								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								<?php
 							}
 							?>
