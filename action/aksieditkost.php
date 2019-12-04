@@ -1,21 +1,23 @@
 <?php
 include "koneksi.php";
-if (!empty($_POST)) {
-if (isset($_POST['nama']) && isset($_POST['alamat']) && isset($_POST['jumlah_kamar']) && isset($_POST['harga_kamar']) && isset($_POST['id_pemilik'])) {
+//if (!empty($_POST)) {
+if (isset($_POST['nama'])) {
 //inisialisasi variabel
-$id_kost = $_GET['id_kost'];
-$nama_kost = filter_input(INPUT_POST, 'nama_kost', FILTER_SANITIZE_STRING);
+$idpelanggan = $_GET['idpelanggan'];
+$nama = filter_input(INPUT_POST, 'nama', FILTER_SANITIZE_STRING);
 $alamat = filter_input(INPUT_POST, 'alamat', FILTER_SANITIZE_STRING);
-$jumlah_kamar = filter_input(INPUT_POST, 'jumlah_kamar', FILTER_SANITIZE_STRING);
-$harga_kamar = filter_input(INPUT_POST, 'harga_kamar', FILTER_SANITIZE_STRING);
-$id_pemilik = filter_input(INPUT_POST, 'id_pemilik', FILTER_SANITIZE_STRING);
-$query = mysqli_query($link, "update kostan set 
-	nama_kost='$nama_kost',
+$jk = filter_input(INPUT_POST, 'jenis_kelamin', FILTER_SANITIZE_STRING);
+$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$notelp = filter_input(INPUT_POST, 'notelp', FILTER_SANITIZE_STRING);
+$query = mysqli_query($link, "update member set 
+	nama='$nama',
 	alamat='$alamat',
-	jumlah_kamar='$jumlah_kamar',
-	harga_kamar='$harga_kamar',
-	id_pemilik='$id_pemilik'
-	where id_kost='$id_kost'
+	username='$username',
+	password='$password',
+	jenis_kelamin='$jk',
+	notelp='$notelp'
+	where idpelanggan='$idpelanggan'
 ") or die(mysqli_error($link));
 if($query) {
         header('location:../halamansewa.php');
@@ -23,5 +25,5 @@ if($query) {
         echo mysqli_error($link);
 }
 }
-}
+//}
 ?>
