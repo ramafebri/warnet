@@ -93,7 +93,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<td><?php echo $row['nama_operator']; ?></td>
 						<td><a href='editkost.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletekost.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-danger'>
+							<a href='action/aksideletekost.php?idhari=<?php echo $row['idhari'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 							
 							

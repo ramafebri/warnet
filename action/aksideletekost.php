@@ -1,9 +1,9 @@
 <?php
 include "koneksi.php";
 
-$idpelanggan = $_GET['idpelanggan'];
-$query = mysqli_query($link, "delete from member
-	where idpelanggan = '$idpelanggan'
+$idpelanggan = $_GET['idhari'];
+$query = mysqli_query($link, "delete from jadwal
+	where idhari = '$idpelanggan'
 ")or die(mysqli_error($link));
 
 if($query) {
