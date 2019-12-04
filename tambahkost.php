@@ -44,37 +44,15 @@
             <p>Please fill this form to add new kostan.</p>
             <form action=" action/aksitambahkost.php" method="post">
                 <div class="form-group ">
-                    <label>Nama kost</label>
-                    <input type="text" name="nama_kost" class="form-control" value="">
+                    <label>Hari</label>
+                    <input type="text" name="hari" class="form-control" value="">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group ">
-                    <label>Alamat</label>
-                    <input type="text" name="alamat" class="form-control" value="">
+                    <label>Nama Operator</label>
+                    <input type="text" name="nama_operator" class="form-control" value="">
                     <span class="help-block"></span>
                 </div>       
-                <div class="form-group ">
-                    <label>Jumlah Kamar</label>
-                    <input type="text" name="jumlah_kamar" class="form-control" value="">
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group ">
-                    <label>Harga Kamar</label>
-                    <input type="text" name="harga_kamar" class="form-control" value="">
-                    <span class="help-block"></span>
-                </div>
-                <div class="form-group ">
-                    <label>ID Pemilik</label>
-                    <select class="form-control" name='id_pemilik' style="border:1px;border-radius: 30px;">
-                        <?php include "action/koneksi.php"; 
-                        $query = "SELECT * FROM Pemilik"; 
-                        $result = mysqli_query($link, $query) or die(mysqli_error($link)); 
-                        while  ($row   = mysqli_fetch_array($result)) { ?>
-                            <option value="<?php    echo    $row['id_pemilik'];   ?>"><?php   echo $row['id_pemilik']; ?></option>
-                        <?php } ?>
-                    </select>
-                </div>   
-                
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
