@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="koko">	
 		<img src="img/background5.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Sewa Kostan</h1>
+			<h1 style="font-size: 60px;">Informasi Pelanggan</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -34,11 +34,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Sewa </a>
+				<a href="halamankost.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Informasi </a> 
+				<a href="halamansewa.php"> Ruangan </a> 
 			</div>
 			<div class="var-left-side">
 				<a href="halamanpemilik.php"> Jadwal </a> 
@@ -56,37 +56,34 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Daftar Sewa Kost</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Informasi Pelanggan</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
-				<th>No</th>
-				<th>Nama Kost</th>
+				<th>Nama Pelanggan</th>
+				<th>Username</th>
+				<th>Password</th>
+				<th>Jenis Kelamin</th>
+				<th>No Telepon</th>
 				<th>Alamat</th>
-				<th>Total Sewa</th>
-				<th>Harga Kamar</th>
-				<th>Nama Penyewa</th>
-				<th>Status Sewa</th>
 				<th>Aksi</th>
 			</tr>
 			<tbody>
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select id_sewa , nama_kost, alamat , total_sewa, harga_kamar, nama_penyewa,  status_sewa 
-				from sewa inner join kostan on sewa.id_kost = kostan.id_kost 
+				select * from member; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
 					?>
 					<tr>
-						<td><?php echo $row['id_sewa']; ?></td>
-						<td><?php echo $row['nama_kost']; ?></td>
+						<td><?php echo $row['nama']; ?></td>
+						<td><?php echo $row['username']; ?></td>
+						<td><?php echo $row['password']; ?></td>
+						<td><?php echo $row['jenis_kelamin']; ?></td>
+						<td><?php echo $row['notelp']; ?></td>
 						<td><?php echo $row['alamat']; ?></td>
-						<td><?php echo $row['total_sewa']; ?></td>
-						<td><?php echo $row['harga_kamar']; ?></td>
-						<td><?php echo $row['nama_penyewa']; ?></td>
-						<td><?php echo $row['status_sewa']; ?></td>
 						<td><a href='action/aksideletesewa.php?id=<?php echo $row['id_sewa'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Sewa</button></a>
 							</td>
