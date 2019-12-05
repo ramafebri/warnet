@@ -22,7 +22,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		<img src="img/background4.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
 			<h1 style="font-size: 60px;">Selamat Datang <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
-			<p style="font-size: 19px;">Kami akan carikan anda Kostsan yang terbaik</p>
+			<p style="font-size: 19px;">Warnet Skyland</p>
 		</div>
 
 	</div>
@@ -56,27 +56,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	</div>
 	
 	<div class="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Daftar Kost</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Daftar Ruangan</h1>
 		
 		<div class="card">
 			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
 			<div class="container" style="margin-top: 10px;">
-				<h4><b>Kost Putra Salman</b></h4> 
-				<p>Alamat :Jl Tanjung Sari no7 Sumurboto Banyumanik 
-					<br>No Telp : 0812189775950 
-					<br>Harga: 1.000.000 
-					<br>Fasilitas : AC, KM Dalam, Termasuk Listrik, Kulkas Bersama</p> 
+				<h4><b>Ruangan AC</b></h4> 
 				
 			</div>
 		</div>
 		<div class="card">
 			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
 			<div class="container" style="margin-top: 10px;">
-				<h4><b>Kost Lanang</b></h4> 
-				<p>Jl Tanjung Sari no7 Sumurboto Banyumanik
-				<br>No Telp : 0812189775950 
-					<br>Harga: 1.000.000 
-					<br>Fasilitas : AC, KM Dalam, Termasuk Listrik, Kulkas Bersama</p></p> 
+				<h4><b>Ruangan Non AC</b></h4> 
 			</div>
 		</div>
 		
@@ -90,10 +82,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
             <p class="text-justify">Arya Naradana <br>
-            	21120117140024 <br>
-            	Teknik Komuter 2017 <br>
-            	@naradanarya <br>
-            jl Tanjung sari no7 </p>
+            	Rama Febriansyah <br>
+            	Aryo Anindyo A <br>
+            	Dwi Supardiyono <br>
+                Julian Manuel </p>
+				Afif Makruf <br>
+            	Elvitro Gumelar<br>
+            	Heidi Amellie <br>
+                Siskawati Sianipar </p>
           </div>
 
           <div class="col-xs-6 col-md-3">
@@ -125,7 +121,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
-         <a href="#">AryaN</a>.
+         <a href="#">Kelompok 7 RPL B</a>.
             </p>
           </div>
 
