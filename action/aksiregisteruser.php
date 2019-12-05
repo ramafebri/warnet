@@ -63,9 +63,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+        if(isset($_POST['nama']) && isset($_POST['ttl']) && isset($_POST['jenis_kelamin']) && isset($_POST['notelp']) && isset($_POST['alamat'])){
+        
+        $nama = filter_input(INPUT_POST, 'nama', FILTER_SANITIZE_STRING);
+        $ttl = filter_input(INPUT_POST, 'ttl', FILTER_SANITIZE_STRING);
+        $jenis_kelamin = filter_input(INPUT_POST, 'jenis_kelamin', FILTER_SANITIZE_STRING);
+        $notelp = filter_input(INPUT_POST, 'notelp', FILTER_SANITIZE_STRING);
+        $alamat = filter_input(INPUT_POST, 'alamat', FILTER_SANITIZE_STRING);
         
         // Prepare an insert statement
-        $sql = "INSERT INTO member (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO member (username, password, nama, ttl, jenis_kelamin, notelp, alamat) VALUES ('$username', '$password', '$nama', '$ttl', '$jenis_kelamin', '$notelp', '$alamat')";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -90,5 +97,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     mysqli_close($link);
+}
 }
 ?>

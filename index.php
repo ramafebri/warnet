@@ -73,6 +73,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		</div>
 		
 				<a href="halamansewa.php" class="login" style="margin:20px; "><span>View More</span></a>
+				
+				<form action="action/logoutuser.php" method="post">
+				<div class="login">
+				<button type="submit">Logout User</button>
+				</div></form>
 			
 		
 	</div>

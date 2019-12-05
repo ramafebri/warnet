@@ -52,9 +52,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $username, $password);
                     if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                        
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $password_err = "The password you entered was not valid.";
                         }
                     }
-                } else{
+                 else{
                     // Display an error message if username doesn't exist
                     $username_err = "No account found with that username.";
                 }

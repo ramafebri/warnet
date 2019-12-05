@@ -57,11 +57,36 @@
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
+            <div class="form-group ">
+                <label>Nama</label>
+                <input type="text" name="nama" class="form-control" value="" required>
+                
+            </div>
+            <div class="form-group ">
+                <label>Tempat Tanggal Lahir</label>
+                <input type="date" name="ttl" class="form-control" value="" required>
+                <span class="help-block"></span>
+            </div>
+            <div class="form-group ">
+                <label>Jenis Kelamin</label>
+                <input type="text" name="jenis_kelamin" class="form-control" value="" required>
+                
+            </div>
+            <div class="form-group ">
+                <label>Nomor Telepom</label>
+                <input type="text" name="notelp" class="form-control" value="" required>
+            </div>
+            <div class="form-group ">
+                <label>Alamat</label>
+                <input type="text" name="alamat" class="form-control" value="" required>
+                
+            </div>
+            
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="halamanloginuser.php">Login here</a>.</p>
+            <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
         </form>
     </div>    
 </body>

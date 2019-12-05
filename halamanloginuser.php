@@ -97,7 +97,7 @@ span.password {
 </style>
 </head>
 <body>
-<?php include 'action/aksiloginuser.php';?>
+<?php include "action/aksiloginuser.php";?>
 
 <h2 style="color: white;">Login </h2>
 
@@ -117,7 +117,7 @@ span.password {
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-  </div>
+     </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <a href="registeruser.php" class="cancelbtn">Daftar</a>
