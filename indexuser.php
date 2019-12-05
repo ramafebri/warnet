@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
+	header("location: halamanloginuser.php");
 	exit;
 }
 ?>
@@ -30,18 +30,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		
 		<div class="left-side">
 			<div class="var-left-side">
-				<a href="index.php"> Home </a>
+				<a href="indexuser.php"> Home </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Pelanggan </a>
-			</div>
-
-			<div class="var-left-side">
-				<a href="halamansewa.php"> Jadwal </a> 
-			</div>
-			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Ruangan </a> 
+				<a href="halamankost.php"> Registrasi </a>
 			</div>	
 		</div>
 		
@@ -50,7 +43,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logut</span></a>
+			<a href="action/logoutuser.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
@@ -58,28 +51,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="luar">
 		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Daftar Ruangan</h1>
 		
-		<div class="card">
-			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
+		<div class="card" style="width:700px; height:600px;">
+			<img src="https://i.pinimg.com/originals/96/f8/f1/96f8f11265ee50d0d1496fe368c88a66.jpg" alt="Avatar" style="width:100%">
 			<div class="container" style="margin-top: 10px;">
 				<h4><b>Ruangan AC</b></h4> 
 				
 			</div>
 		</div>
-		<div class="card">
-			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
+		<div class="card" style="width:700px; height:600px;">
+			<img src="https://kastenbloom.com/wp-content/uploads/50-best-setup-of-video-game-room-ideas-a-gamers-guide-cool-gaming-room-setups.jpg" alt="Avatar" style="width:100%">
 			<div class="container" style="margin-top: 10px;">
 				<h4><b>Ruangan Non AC</b></h4> 
 			</div>
 		</div>
 		
-				<a href="halamansewa.php" class="login" style="margin:20px; "><span>View More</span></a>
-				
-				<form action="action/logout.php" method="post">
-				<div class="login">
-				<button type="submit">Logout User</button>
-				</div></form>
-			
-		
+				<a href="halamankost.php" class="login" style="margin:20px; "><span>View More</span></a>
 	</div>
 	 <footer class="site-footer">
       <div class="container">
