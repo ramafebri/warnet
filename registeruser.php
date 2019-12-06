@@ -37,6 +37,7 @@
     </style>
 </head>
 <body>
+
 <?php include 'action/aksiregisteruser.php';?>
     <div class="wrapper">
         <h2 >Sign Up</h2>
@@ -86,7 +87,7 @@
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
+            <p>Already have an account? <a href="halamanloginuser.php">Login here</a>.</p>
         </form>
     </div>    
 </body>

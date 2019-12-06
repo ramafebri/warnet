@@ -13,23 +13,23 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>SI WARNET</title>
+	<title>Kostan</title>
 </head>
 <body>
-		<div class="koko">	
-		<img src="img/background4.jpg" class="img-fluid" alt="Responsive image">
+	<div class="koko" >	
+		<img src="img/background11.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Selamat Datang <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>.</h1>
-			<p style="font-size: 19px;">Warnet Skyland</p>
+			<h1 style="font-size: 60px;">Registrasi Pelanggan</h1>
+			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
 	</div>
 	<div class="covers" id="myheader">
 		
 		<div class="left-side">
-			<div class="var-left-side">
+        <div class="var-left-side">
 				<a href="index.php"> Home </a>
 			</div>
 
@@ -42,9 +42,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 			<div class="var-left-side">
 				<a href="halamanpemilik.php"> Ruangan </a> 
-			</div>	
+			</div>
+
 			<div class="var-left-side">
-			<a href="halamanregistmain.php"> Registrasi </a>
+				<a href="halamanregistmain.php"> Registrasi </a>
 			</div>	
 		</div>
 		
@@ -58,30 +59,42 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		</div>
 	</div>
 	
-	<div class="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Daftar Ruangan</h1>
-		
-		<div class="card">
-			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
-			<div class="container" style="margin-top: 10px;">
-				<h4><b>Ruangan AC</b></h4> 
+	<div class="luar" id="luar">
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Registrasi Pelanggan</h1>
+		<br>
+		<table class="makanan" style="text-align: center;">
+			<tr>
+				<th>Nama Pelanggan</th>
+				<th>Ruangan</th>
+				<th>Waktu</th>
+				<th>Konfirmasi</th>
+                <th>Aksi</th>
 				
-			</div>
-		</div>
-		<div class="card">
-			<img src="img/background1.jpg" alt="Avatar" style="width:100%">
-			<div class="container" style="margin-top: 10px;">
-				<h4><b>Ruangan Non AC</b></h4> 
-			</div>
-		</div>
-		
-				<a href="halamansewa.php" class="login" style="margin:20px; "><span>View More</span></a>
 				
-				<form action="action/logout.php" method="post">
-				<div class="login">
-				<button type="submit">Logout</button>
-				</div></form>
-			
+			</tr>
+			<tbody>
+				<?php
+				include "action/koneksi.php";
+				$query = "
+				select * from pesananuser; 
+				";
+				$result = mysqli_query($link, $query) or die(mysqli_error($link));
+				while ($row = mysqli_fetch_array($result)) {
+					?>
+					<tr>
+						<td><?php echo $row['nama']; ?></td>
+						<td><?php echo $row['ruangan']; ?></td>
+						<td><?php echo $row['waktu']; ?></td>
+						<td><?php echo $row['Konfirmasi']; ?></td>
+                        <td><a href='editregistmain.php?id=<?php echo $row['id'] ?>' class='btn btn-success'>
+							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
+						
+												
+								<?php
+							}
+							?>
+						</tbody>
+					</table>
 		
 	</div>
 	 <footer class="site-footer">
@@ -89,15 +102,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p class="text-justify">Arya Naradana <br>
-            	Rama Febriansyah <br>
-            	Aryo Anindyo A <br>
-            	Dwi Supardiyono <br>
-                Julian Manuel </p>
-				Afif Makruf <br>
-            	Elvitro Gumelar<br>
-            	Heidi Amellie <br>
-                Siskawati Sianipar </p>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
 
           <div class="col-xs-6 col-md-3">
@@ -129,15 +139,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12">
             <p class="copyright-text">Copyright &copy; 2019 All Rights Reserved by 
-         <a href="#">Kelompok 7 RPL B</a>.
+         <a href="#">AryaN</a>.
             </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
-              <li><a class="facebook" href="https://www.facebook.com/arya.naradana"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a class="instagram" href="https://www.instagram.com/naradanarya/"><i class="fa fa-instagram"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
               <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
             </ul>
           </div>

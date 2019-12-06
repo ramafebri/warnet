@@ -30,14 +30,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		
 		<div class="left-side">
 			<div class="var-left-side">
-				<a href="index.php"> Home </a>
+				<a href="indexuser.php"> Home </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Registrasi </a>
-			</div>
-
-					
+				<a href="Registrasimainuser.php"> Registrasi </a>
+			</div>	
 		</div>
 		
 		<div class="right-side">

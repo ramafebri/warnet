@@ -42,7 +42,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 			<div class="var-left-side">
 				<a href="halamanpemilik.php"> Ruangan </a> 
-			</div>		
+			</div>
+			<div class="var-left-side">
+			<a href="halamanregistmain.php"> Registrasi </a>
+			</div>			
 		</div>
 		
 		<div class="right-side">

@@ -34,7 +34,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Registrasi </a>
+				<a href="Registrasimainuser.php"> Registrasi </a>
 			</div>	
 		</div>
 		

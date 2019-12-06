@@ -1,3 +1,15 @@
+<?php
+//isikan dengan query select data
+include "action/koneksi.php";
+$idpelanggan = $_GET['id'];
+$query = mysqli_query($link, "select * from pesananuser where id='$idpelanggan'") or die(mysqli_error($link));
+
+while ($res = mysqli_fetch_array($query)) {
+    $nama = $res['nama'];
+    $ruangan = $res['ruangan'];
+    $waktu = $res['waktu'];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +28,6 @@
             background-size: cover;
             margin-left: 660px;
             margin-top: 120px;
-
-
 
         }
         .wrapper{ width: 400px; padding: 20px;
@@ -42,22 +52,28 @@
         <div class="wrapper">
             <h2 >Registrasi Pelanggan</h2>
             <p>Please fill this form to add new kostan.</p>
-            <form action=" action/aksitambahpelanggan.php" method="post">
+            <form action=" action/aksieditregistmain.php?id=<?php echo  $idpelanggan;  ?>" method="post">
                 <div class="form-group ">
                     <label>Nama</label>
-                    <input type="text" name="nama" class="form-control" value="">
+                    <input value="<?php echo $nama; ?>" type="text" name="nama" class="form-control" value=""  value="<?php echo $nama; ?>">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group ">
                     <label>Ruangan</label>
-                    <input type="text" name="ruangan" class="form-control" value="">
+                    <input  value="<?php echo $ruangan; ?>" type="text" name="ruangan" class="form-control" value="" value="<?php echo $ruangan; ?>">
                     <span class="help-block"></span>
                 </div>
                 <div class="form-group ">
                     <label>Waktu</label>
-                    <input type="text" name="waktu" class="form-control" value="">
+                    <input value="<?php echo $waktu; ?>" type="text" name="waktu" class="form-control" value="" value="<?php echo $waktu; ?>">
                     <span class="help-block"></span>
-                </div>  
+                </div>
+                
+                <div class="form-group ">
+                    <label>Konfirmasi</label>
+                    <input type="text" name="Konfirmasi" class="form-control" value="">
+                    <span class="help-block"></span>
+                </div>      
                      
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
