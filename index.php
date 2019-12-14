@@ -1,14 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
-	exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +23,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Pelanggan </a>
+				<a href="informasimember.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Jadwal </a> 
+				<a href="jadwalwarnet.php"> Jadwal </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Ruangan </a> 
+				<a href="ruanganwarnet.php"> Ruangan </a> 
 			</div>	
 			<div class="var-left-side">
 			<a href="halamanregistmain.php"> Registrasi </a>
@@ -53,7 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logut</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>

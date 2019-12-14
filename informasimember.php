@@ -1,21 +1,10 @@
-<?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
-	exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>Kostan</title>
+	<title>WARNET</title>
 </head>
 <body>
 	<div class="koko">	
@@ -34,18 +23,18 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Pelanggan </a>
+				<a href="informasimember.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Jadwal </a> 
+				<a href="jadwalwarnet.php"> Jadwal </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Ruangan </a> 
-			</div>
+				<a href="ruanganwarnet.php"> Ruangan </a> 
+			</div>	
 			<div class="var-left-side">
 			<a href="halamanregistmain.php"> Registrasi </a>
-			</div>			
+			</div>		
 		</div>
 		
 		<div class="right-side">
@@ -53,7 +42,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logut</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
@@ -66,8 +55,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<th>Nama Pelanggan</th>
 				<th>Username</th>
 				<th>Password</th>
-				<th>Jenis Kelamin</th>
-				<th>No Telepon</th>
 				<th>Alamat</th>
 				<th>Aksi</th>
 			</tr>
@@ -75,7 +62,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from member; 
+				select * from user; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
@@ -84,10 +71,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<td><?php echo $row['nama']; ?></td>
 						<td><?php echo $row['username']; ?></td>
 						<td><?php echo $row['password']; ?></td>
-						<td><?php echo $row['jenis_kelamin']; ?></td>
-						<td><?php echo $row['notelp']; ?></td>
 						<td><?php echo $row['alamat']; ?></td>
-						<td><a href='editkost.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-success'>
+						<td><a href='editmember.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
 							<a href='action/aksideletekost.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>

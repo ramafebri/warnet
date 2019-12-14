@@ -1,13 +1,4 @@
-<?php
-// Initialize the session
-session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
-	exit;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,13 +7,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">		
-	<title>Kostan</title>
+	<title>WARNET</title>
 </head>
 <body>
 	<div class="koko">	
-		<img src="img/background10.jpg" class="img-fluid" alt="Responsive image">
+		<img src="img/background9.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Jadwal SeeWarnet</h1>
+			<h1 style="font-size: 60px;">Ruangan Warnet</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -35,14 +26,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php">Pelanggan</a>
+				<a href="informasimember.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Jadwal </a> 
+				<a href="jadwalwarnet.php"> Jadwal </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Ruangan </a> 
+				<a href="ruanganwarnet.php"> Ruangan </a> 
+			</div>	
+			<div class="var-left-side">
+			<a href="halamanregistmain.php"> Registrasi </a>
 			</div>	
 		</div>
 		
@@ -51,7 +45,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logout</span></a>
+			<a href="action/logout.php" class="login"><span>logut</span></a>
 
 		</div>
 	</div>
@@ -59,7 +53,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="luar" id="luar">
 
 		<div class="wrap" style="display: flex;}">
-			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Jadwal Pelanggan</h1>
+			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Informasi Ruangan</h1>
 			<form method="POST" action="searchkost.php" class="aqaqa">
 				<div class="search" style="float: right; margin-left: 600px; margin-top: 29px;width: 100%;position: relative;display: flex;">
 					<input type="text" name="search" class="searchTerm" placeholder="What are you looking for?" style="width: 100%;border: 3px solid #00B4CC;border-right: none;padding: 15px;height: 20px;border-radius: 5px 0 0 5px;outline: none;color: #9DBFAF;">
@@ -71,33 +65,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		</form>
 		<table class="makanan" style="text-align: center;">
 			<tr>
-			
 				<th>No</th>
-				<th>Hari</th>
-				<th>Nama Operator</th>
+				<th>Nama Ruangan</th>
+				<th>Jenis Ruangan</th>
 				<th>Aksi</th>
-			
+				
 			</tr>
 			<tbody>
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from jadwal;
+				select * from ruangan 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
 					?>
 					<tr>
-						<td><?php echo $row['idhari']; ?></td>
-						<td><?php echo $row['hari']; ?></td>
-						<td><?php echo $row['nama_operator']; ?></td>
-						<td><a href='editkost.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-success'>
-							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletekost.php?idhari=<?php echo $row['idhari'] ?>' class='btn btn-danger'>
+						<td><?php echo $row['idruangan']; ?></td>
+						<td><?php echo $row['nama_ruangan']; ?></td>
+						<td><?php echo $row['jenis_ruangan']; ?></td>
+						<td><a href='action/aksideletepemilik.php?idruangan=<?php echo $row['idruangan'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
-							
-							
-							
+								</tr>
 								<?php
 							}
 							?>
@@ -107,8 +96,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 
 
-					<a href="tambahkost.php" class="login" style="margin:10px;"><span>Tambah User</span></a>
-
+					<a href="tambahpemilik.php" class="login" style="margin:10px;"><span>Tambah Ruangan</span></a>
 
 				</div>
 				<footer class="site-footer">

@@ -1,13 +1,13 @@
 <?php
 include "koneksi.php";
 
-$id_kost = $_GET['idpelanggan'];
+$id_jadwal = $_GET['idpelanggan'];
 $query = mysqli_query($link, "delete from jadwal
-	where idpelanggan = '$id_sewa'
+	where idpelanggan = '$id_jadwal'
 ")or die(mysqli_error($link));
 
 if($query) {
-        header('location:../halamankost.php');
+        header('location:../jadwalwarnet.php');
 } else {
         echo mysqli_error($link);
 }
