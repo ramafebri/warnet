@@ -27,7 +27,7 @@ header("Location: halamanlogin.php");
 		
 		<div class="left-side">
 			<div class="var-left-side">
-				<a href="indexuser.php"> Home </a>
+				<a href="indexpelanggan.php"> Home </a>
 			</div>
 
 			<div class="var-left-side">
