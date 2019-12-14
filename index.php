@@ -14,7 +14,7 @@ header("Location: halamanlogin.php");
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>SI WARNET</title>
+	<title>WARNET</title>
 </head>
 <body>
 		<div class="koko">	
@@ -43,7 +43,7 @@ header("Location: halamanlogin.php");
 				<a href="ruanganwarnet.php"> Ruangan </a> 
 			</div>	
 			<div class="var-left-side">
-			<a href="halamanregistmain.php"> Registrasi </a>
+				<a href="reservasimain.php"> Reservasi </a>
 			</div>	
 		</div>
 		
@@ -74,14 +74,8 @@ header("Location: halamanlogin.php");
 			</div>
 		</div>
 		
-				<a href="halamansewa.php" class="login" style="margin:20px; "><span>View More</span></a>
+				<a href="ruanganwarnet.php" class="login" style="margin:20px; "><span>View More</span></a>
 				
-				<form action="action/logout.php" method="post">
-				<div class="login">
-				<button type="submit">Logout</button>
-				</div></form>
-			
-		
 	</div>
 	 <footer class="site-footer">
       <div class="container">

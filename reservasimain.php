@@ -1,27 +1,16 @@
-<?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
-	exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>Kostan</title>
+	<title>WARNET</title>
 </head>
 <body>
 	<div class="koko" >	
 		<img src="img/background11.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Registrasi Pelanggan</h1>
+			<h1 style="font-size: 60px;">Reservasi Main Member</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -34,18 +23,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamankost.php"> Pelanggan </a>
+				<a href="informasimember.php"> Pelanggan </a>
 			</div>
 
 			<div class="var-left-side">
-				<a href="halamansewa.php"> Jadwal </a> 
+				<a href="jadwalwarnet.php"> Jadwal </a> 
 			</div>
 			<div class="var-left-side">
-				<a href="halamanpemilik.php"> Ruangan </a> 
-			</div>
-
+				<a href="ruanganwarnet.php"> Ruangan </a> 
+			</div>	
 			<div class="var-left-side">
-				<a href="halamanregistmain.php"> Registrasi </a>
+				<a href="reservasimain.php"> Reservasi </a>
 			</div>	
 		</div>
 		
@@ -54,17 +42,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logut</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Registrasi Pelanggan</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Reservasi Member</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
-				<th>Nama Pelanggan</th>
+				<th>Nama Member</th>
 				<th>Ruangan</th>
 				<th>Waktu</th>
 				<th>Konfirmasi</th>
@@ -86,10 +74,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						<td><?php echo $row['ruangan']; ?></td>
 						<td><?php echo $row['waktu']; ?></td>
 						<td><?php echo $row['Konfirmasi']; ?></td>
-                        <td><a href='editregistmain.php?id=<?php echo $row['id'] ?>' class='btn btn-success'>
+                        <td><a href='editreservasimain.php?id=<?php echo $row['id'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-						
-												
+							<a href='action/aksideletereservasin.php?idruangan=<?php echo $row['id'] ?>' class='btn btn-danger'>
+								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>											
 								<?php
 							}
 							?>

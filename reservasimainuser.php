@@ -1,13 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanlogin.php");
-	exit;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,14 +5,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>Kostan</title>
+	<title>WARNET</title>
 </head>
 <body>
 	<div class="koko" >	
 		<img src="img/background11.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Registrasi Pelanggan</h1>
-			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
+			<h1 style="font-size: 60px;">Reservasi Main</h1>
 		</div>
 
 	</div>
@@ -34,7 +23,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="Registrasimainuser.php"> Registrasi </a>
+				<a href="reservasimainuser.php"> Reservasi Main </a>
 			</div>	
 		</div>
 		
@@ -43,13 +32,13 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logoutuser.php" class="login"><span>logut</span></a>
+			<a href="action/logoutuser.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Registrasi Pelanggan</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Reservasi Main</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
@@ -81,7 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 							?>
 						</tbody>
 					</table>
-				<a href='halamantambahpelanggan.php?idpesan=<?php echo $row['idpesan'] ?>' class="login" style="margin:10px;"><span>ADD New</span></a>
+				<a href='tambahreservasimain.php?idpesan=<?php echo $row['idpesan'] ?>' class="login" style="margin:10px;"><span>ADD New</span></a>
 		
 	</div>
 	 <footer class="site-footer">
