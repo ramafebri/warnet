@@ -53,7 +53,7 @@
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from pesananuser; 
+				select * from pesananpelanggan; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {

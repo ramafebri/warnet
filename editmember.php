@@ -1,16 +1,14 @@
 <?php
 //isikan dengan query select data
 include "action/koneksi.php";
-$idpelanggan = $_GET['idpelanggan'];
-$query = mysqli_query($link, "select * from member where idpelanggan='$idpelanggan'") or die(mysqli_error($link));
+$idpelanggan = $_GET['id'];
+$query = mysqli_query($link, "select * from user where id='$idpelanggan'") or die(mysqli_error($link));
 
 while ($res = mysqli_fetch_array($query)) {
     $nama = $res['nama'];
     $alamat = $res['alamat'];
     $username = $res['username'];
     $password = $res['password'];
-    $jk = $res['jenis_kelamin'];
-    $notelp = $res['notelp'];
 }
 ?>
 <!DOCTYPE html>
@@ -56,10 +54,10 @@ while ($res = mysqli_fetch_array($query)) {
     <div class="wrapper">
         <h2 >Edit Pelanggan</h2>
         <p>Please fill this form to edit kostan.</p>
-        <form action=" action/aksieditkost.php?idpelanggan=<?php echo  $idpelanggan;  ?>" method="post">
+        <form action=" action/aksieditmember.php?id=<?php echo  $idpelanggan;  ?>" method="post">
             <div class="form-group ">
                 <label>ID Pelanggan</label>
-                <input value="<?php echo $idpelanggan; ?>" type="text" name="id_pelanggan" class="form-control" value="<?php echo $idpelanggan ?>" disabled>
+                <input value="<?php echo $idpelanggan; ?>" type="text" name="id" class="form-control" value="<?php echo $idpelanggan ?>" disabled>
                 <span class="help-block"></span>
             </div> 
             <div class="form-group ">
@@ -82,16 +80,6 @@ while ($res = mysqli_fetch_array($query)) {
                 <input value="<?php echo $password; ?>" type="text" name="password" class="form-control" value="<?php echo $password ?>">
                 <span class="help-block"></span>
             </div>   
-            <div class="form-group ">
-                <label>Jenis Kelamin</label>
-                <input value="<?php echo $jk; ?>" type="text" name="jenis_kelamin" class="form-control" value="<?php echo $jk ?>">
-                <span class="help-block"></span>
-            </div>
-            <div class="form-group ">
-                <label>No telp</label>
-                <input value="<?php echo $notelp; ?>" type="text" name="notelp" class="form-control" value="<?php echo $notelp ?>">
-                <span class="help-block"></span>
-            </div> 
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">

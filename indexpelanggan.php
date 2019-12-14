@@ -33,7 +33,7 @@
 
 		</div>
 		<div class="oke">
-			<a href="action/logoutuser.php" class="login"><span>logout</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>

@@ -10,7 +10,7 @@
 	<div class="koko" >	
 		<img src="img/background11.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Reservasi Main Member</h1>
+			<h1 style="font-size: 60px;">Reservasi Main Pelanggan</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -48,11 +48,11 @@
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Reservasi Member</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Reservasi Pelanggan</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
-				<th>Nama Member</th>
+				<th>Nama</th>
 				<th>Ruangan</th>
 				<th>Waktu</th>
 				<th>Konfirmasi</th>
@@ -64,7 +64,7 @@
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from pesananuser; 
+				select * from pesananpelanggan; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
@@ -76,7 +76,7 @@
 						<td><?php echo $row['Konfirmasi']; ?></td>
                         <td><a href='editreservasimain.php?id=<?php echo $row['id'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletereservasin.php?idruangan=<?php echo $row['id'] ?>' class='btn btn-danger'>
+							<a href='action/aksideletereservasi.php?id=<?php echo $row['id'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>											
 								<?php
 							}

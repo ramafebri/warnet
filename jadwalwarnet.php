@@ -84,9 +84,9 @@
 						<td><?php echo $row['idhari']; ?></td>
 						<td><?php echo $row['hari']; ?></td>
 						<td><?php echo $row['nama_operator']; ?></td>
-						<td><a href='editmember.php?id_kost=<?php echo $row['id_kost'] ?>' class='btn btn-success'>
+						<td><a href='editjadwal.php?idhari=<?php echo $row['idhari'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletekost.php?idhari=<?php echo $row['idhari'] ?>' class='btn btn-danger'>
+							<a href='action/aksideletejadwal.php?idhari=<?php echo $row['idhari'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 							
 							

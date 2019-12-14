@@ -42,7 +42,7 @@
         <div class="wrapper">
             <h2 >Registrasi Pelanggan</h2>
             <p>Please fill this form to add new kostan.</p>
-            <form action=" action/aksitambahpelanggan.php" method="post">
+            <form action=" action/aksitambahreservasi.php" method="post">
                 <div class="form-group ">
                     <label>Nama</label>
                     <input type="text" name="nama" class="form-control" value="">

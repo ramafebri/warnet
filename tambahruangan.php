@@ -42,7 +42,7 @@
     <div class="wrapper">
         <h2 >Tambah Ruangan</h2>
         <p>Please fill this form to add new Room.</p>
-        <form action=" action/aksitambahpemilik.php" method="post">
+        <form action=" action/aksitambahruangan.php" method="post">
             <div class="form-group ">
                 <label>Nama Ruangan</label>
                 <input type="text" name="nama_ruangan" class="form-control">

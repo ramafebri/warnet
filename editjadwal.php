@@ -1,4 +1,15 @@
+<?php
+//isikan dengan query select data
+include "action/koneksi.php";
+$idhari = $_GET['idhari'];
+$query = mysqli_query($link, "select * from jadwal where idhari='$idhari'") or die(mysqli_error($link));
 
+while ($res = mysqli_fetch_array($query)) {
+    $hari = $res['hari'];
+    $nama_operator = $res['nama_operator'];
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,42 +51,24 @@
 <body>
 
     <div class="wrapper">
-        <h2 >Sewa Kost</h2>
-        <p>Please fill this form to edit kostan.</p>
-        <form action="action/aksisewakost.php" method="post">
+        <h2 >Edit Jadwal</h2>
+        <form action=" action/aksieditjadwal.php?idhari=<?php echo  $idhari;  ?>" method="post">
             <div class="form-group ">
-                <label>ID Kost</label>
-                <input value="" type="text" name="id_kost" class="form-control" value="" >
+                <label>ID</label>
+                <input value="<?php echo $idhari; ?>" type="text" name="idhari" class="form-control" value="<?php echo $idhari ?>" disabled>
+                <span class="help-block"></span>
+            </div> 
+            <div class="form-group ">
+                <label>Hari</label>
+                <input value="<?php echo $hari; ?>" type="text" name="hari" class="form-control" value="<?php echo $hari ?>">
                 <span class="help-block"></span>
             </div>
             <div class="form-group ">
-                <label>Nama Penyewa</label>
-                <input value="" type="text" name="nama_penyewa" class="form-control" value="">
+                <label>Nama Operator</label>
+                <input value="<?php echo $nama_operator; ?>" type="text" name="nama_operator" class="form-control" value="<?php echo $nama_operator?>">
                 <span class="help-block"></span>
-            </div>  
-      
-                
-            <div class="form-group ">
-                <label>Total Sewa</label>
-                <input value="" type="text" name="total_sewa" class="form-control" value="">
-                <span class="help-block"></span>
-            </div>
-            <div class="form-group ">
-                <label>Status Sewa</label>
-                <input value="" type="text" name="status_sewa" class="form-control" value="">
-                <span class="help-block"></span>
-            </div>   
-            <div class="form-group ">
-                    <label>ID Pemilik</label>
-                    <select class="form-control" name='id_pemilik' style="border:1px;border-radius: 30px;">
-                        <?php include "action/koneksi.php"; 
-                        $query = "SELECT * FROM Pemilik"; 
-                        $result = mysqli_query($link, $query) or die(mysqli_error($link)); 
-                        while  ($row   = mysqli_fetch_array($result)) { ?>
-                            <option value="<?php    echo    $row['id_pemilik'];   ?>"><?php   echo $row['id_pemilik']; ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
+            </div>       
+            
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">

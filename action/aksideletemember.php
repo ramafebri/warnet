@@ -1,13 +1,13 @@
 <?php
 include "koneksi.php";
 
-$idpelanggan = $_GET['idhari'];
-$query = mysqli_query($link, "delete from jadwal
-	where idhari = '$idpelanggan'
+$id = $_GET['id'];
+$query = mysqli_query($link, "delete from user
+	where id = '$id'
 ")or die(mysqli_error($link));
 
 if($query) {
-        header('location:../halamansewa.php');
+        header('location:../informasimember.php');
 } else {
         echo mysqli_error($link);
 }
