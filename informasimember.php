@@ -10,7 +10,7 @@
 	<div class="koko">	
 		<img src="img/background5.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Informasi Member</h1>
+			<h1 style="font-size: 60px;">Informasi Pelanggan</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -48,7 +48,7 @@
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Informasi Member</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Informasi Pelanggan</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
