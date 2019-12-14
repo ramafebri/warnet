@@ -1,11 +1,8 @@
 <?php
-// Initialize the session
-session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanloginuser.php");
-	exit;
+session_start();
+if( !isset($_SESSION["status"])) {
+header("Location: halamanlogin.php");
 }
 ?>
 
@@ -43,7 +40,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 		</div>
 		<div class="oke">
-			<a href="action/logoutuser.php" class="login"><span>logout</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>

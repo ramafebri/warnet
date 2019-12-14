@@ -72,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $alamat = filter_input(INPUT_POST, 'alamat', FILTER_SANITIZE_STRING);
         
         // Prepare an insert statement
-        $sql = "INSERT INTO member (username, password, nama, ttl, jenis_kelamin, notelp, alamat) VALUES ('$username', '$password', '$nama', '$ttl', '$jenis_kelamin', '$notelp', '$alamat')";
+        $sql = "INSERT INTO  (username, password, nama, ttl, jenis_kelamin, notelp, alamat) VALUES ('$username', '$password', '$nama', '$ttl', '$jenis_kelamin', '$notelp', '$alamat')";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters

@@ -97,11 +97,10 @@ span.password {
 </style>
 </head>
 <body>
-<?php include 'action/login.php';?>
 
 <h2 style="color: white;">Login </h2>
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" >
+<form action="action/login.php" method="POST" >
   <div class="imgcontainer">
     <img src="img/ava2.jpg" alt="Avatar" class="avatar">
   </div>
@@ -113,7 +112,7 @@ span.password {
     <label for="password"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
         
-    <button type="submit">Login</button>
+    <button name ="login_btn" type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
