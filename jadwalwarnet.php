@@ -1,4 +1,10 @@
+<?php
 
+session_start();
+if( !isset($_SESSION["status_user"])) {
+header("Location: halamanlogin.php");
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
