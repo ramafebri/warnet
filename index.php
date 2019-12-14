@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+if( !isset($_SESSION["status"])) {
+header("Location: halamanlogin.php");
+}else{
+	header("Location: indexpelanggan.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
