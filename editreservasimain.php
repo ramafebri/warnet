@@ -2,7 +2,7 @@
 //isikan dengan query select data
 include "action/koneksi.php";
 $idpelanggan = $_GET['id'];
-$query = mysqli_query($link, "select * from pesananuser where id='$idpelanggan'") or die(mysqli_error($link));
+$query = mysqli_query($link, "select * from pesananpelanggan where id='$idpelanggan'") or die(mysqli_error($link));
 
 while ($res = mysqli_fetch_array($query)) {
     $nama = $res['nama'];
@@ -52,7 +52,7 @@ while ($res = mysqli_fetch_array($query)) {
         <div class="wrapper">
             <h2 >Registrasi Pelanggan</h2>
             <p>Please fill this form to add new kostan.</p>
-            <form action=" action/aksieditregistmain.php?id=<?php echo  $idpelanggan;  ?>" method="post">
+            <form action=" action/aksieditreservasimain.php?id=<?php echo  $idpelanggan;  ?>" method="post">
                 <div class="form-group ">
                     <label>Nama</label>
                     <input value="<?php echo $nama; ?>" type="text" name="nama" class="form-control" value=""  value="<?php echo $nama; ?>">

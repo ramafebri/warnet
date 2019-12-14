@@ -1,9 +1,9 @@
 <?php
 include "koneksi.php";
 
-$id_jadwal = $_GET['idpelanggan'];
+$idpelanggan = $_GET['idhari'];
 $query = mysqli_query($link, "delete from jadwal
-	where idpelanggan = '$id_jadwal'
+	where idhari = '$idpelanggan'
 ")or die(mysqli_error($link));
 
 if($query) {

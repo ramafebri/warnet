@@ -1,10 +1,8 @@
 <?php
 
 session_start();
-if( !isset($_SESSION["status"])) {
+if( !isset($_SESSION['status_user'])) {
 header("Location: halamanlogin.php");
-}else{
-	header("Location: indexpelanggan.php");
 }
 ?>
 

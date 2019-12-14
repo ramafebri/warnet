@@ -72,16 +72,16 @@
 						<td><?php echo $row['username']; ?></td>
 						<td><?php echo $row['password']; ?></td>
 						<td><?php echo $row['alamat']; ?></td>
-						<td><a href='editmember.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-success'>
+						<td><a href='editmember.php?id=<?php echo $row['id'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletemember.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-danger'>
+							<a href='action/aksideletemember.php?id=<?php echo $row['id'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								<?php
 							}
 							?>
 						</tbody>
 					</table>
-					<a href="tambahmember.php" class="login" style="margin:10px;"><span>Tambah Member</span></a>
+					<a href="tambahmember.php" class="login" style="margin:10px;"><span>Tambah Pelanggan</span></a>
 		
 	</div>
 	 <footer class="site-footer">

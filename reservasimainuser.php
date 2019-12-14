@@ -19,7 +19,7 @@
 		
 		<div class="left-side">
 			<div class="var-left-side">
-				<a href="indexuser.php"> Home </a>
+				<a href="indexpelanggan.php"> Home </a>
 			</div>
 
 			<div class="var-left-side">
@@ -32,7 +32,7 @@
 
 		</div>
 		<div class="oke">
-			<a href="action/logoutuser.php" class="login"><span>logout</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
@@ -53,7 +53,7 @@
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from pesananuser; 
+				select * from pesananpelanggan; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {

@@ -42,7 +42,7 @@
         <div class="wrapper">
             <h2 >Tambah Kost</h2>
             <p>Please fill this form to add new kostan.</p>
-            <form action=" action/aksitambahkost.php" method="post">
+            <form action=" action/aksitambahjadwal.php" method="post">
                 <div class="form-group ">
                     <label>Hari</label>
                     <input type="text" name="hari" class="form-control" value="">
