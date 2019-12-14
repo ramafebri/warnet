@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +22,9 @@
 			<div class="var-left-side">
 				<a href="index.php"> Home </a>
 			</div>
-
 			<div class="var-left-side">
 				<a href="informasimember.php"> Pelanggan </a>
 			</div>
-
 			<div class="var-left-side">
 				<a href="jadwalwarnet.php"> Jadwal </a> 
 			</div>
@@ -36,7 +32,7 @@
 				<a href="ruanganwarnet.php"> Ruangan </a> 
 			</div>	
 			<div class="var-left-side">
-			<a href="halamanregistmain.php"> Registrasi </a>
+				<a href="reservasimain.php"> Reservasi </a>
 			</div>	
 		</div>
 		
@@ -45,7 +41,7 @@
 
 		</div>
 		<div class="oke">
-			<a href="action/logout.php" class="login"><span>logut</span></a>
+			<a href="action/logout.php" class="login"><span>logout</span></a>
 
 		</div>
 	</div>
@@ -84,7 +80,7 @@
 						<td><?php echo $row['idruangan']; ?></td>
 						<td><?php echo $row['nama_ruangan']; ?></td>
 						<td><?php echo $row['jenis_ruangan']; ?></td>
-						<td><a href='action/aksideletepemilik.php?idruangan=<?php echo $row['idruangan'] ?>' class='btn btn-danger'>
+						<td><a href='action/aksideleteruangan.php?idruangan=<?php echo $row['idruangan'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								</tr>
 								<?php
@@ -92,12 +88,7 @@
 							?>
 						</tbody>
 					</table>
-
-
-
-
-					<a href="tambahpemilik.php" class="login" style="margin:10px;"><span>Tambah Ruangan</span></a>
-
+					<a href="tambahruangan.php" class="login" style="margin:10px;"><span>Tambah Ruangan</span></a>
 				</div>
 				<footer class="site-footer">
 					<div class="container">

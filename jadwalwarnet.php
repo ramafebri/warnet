@@ -35,7 +35,7 @@
 				<a href="ruanganwarnet.php"> Ruangan </a> 
 			</div>	
 			<div class="var-left-side">
-			<a href="halamanregistmain.php"> Registrasi </a>
+				<a href="reservasimain.php"> Reservasi </a>
 			</div>	
 		</div>
 		
@@ -52,7 +52,7 @@
 	<div class="luar" id="luar">
 
 		<div class="wrap" style="display: flex;}">
-			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Jadwal Pelanggan</h1>
+			<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy; width: 100%;">Jadwal Jaga Warnet</h1>
 			<form method="POST" action="searchkost.php" class="aqaqa">
 				<div class="search" style="float: right; margin-left: 600px; margin-top: 29px;width: 100%;position: relative;display: flex;">
 					<input type="text" name="search" class="searchTerm" placeholder="What are you looking for?" style="width: 100%;border: 3px solid #00B4CC;border-right: none;padding: 15px;height: 20px;border-radius: 5px 0 0 5px;outline: none;color: #9DBFAF;">
@@ -97,11 +97,7 @@
 						</tbody>
 					</table>
 
-
-
-
-					<a href="tambahjadwal.php" class="login" style="margin:10px;"><span>Tambah User</span></a>
-
+					<a href="tambahjadwal.php" class="login" style="margin:10px;"><span>Tambah Jadwal</span></a>
 
 				</div>
 				<footer class="site-footer">

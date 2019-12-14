@@ -1,13 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-	header("location: halamanloginuser.php");
-	exit;
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +5,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
-	<title>SI WARNET</title>
+	<title>WARNET</title>
 </head>
 <body>
 		<div class="koko">	
@@ -34,7 +24,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			</div>
 
 			<div class="var-left-side">
-				<a href="Registrasimainuser.php"> Registrasi </a>
+				<a href="reservasimainuser.php"> Reservasi </a>
 			</div>	
 		</div>
 		
@@ -64,8 +54,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<h4><b>Ruangan Non AC</b></h4> 
 			</div>
 		</div>
-		
-				<a href="halamankost.php" class="login" style="margin:20px; "><span>View More</span></a>
 	</div>
 	 <footer class="site-footer">
       <div class="container">

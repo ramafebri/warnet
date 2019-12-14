@@ -10,7 +10,7 @@
 	<div class="koko">	
 		<img src="img/background5.jpg" class="img-fluid" alt="Responsive image">
 		<div class="yoyo">
-			<h1 style="font-size: 60px;">Informasi Pelanggan</h1>
+			<h1 style="font-size: 60px;">Informasi Member</h1>
 			<a href="#luar" class="login" style="font-size: 19px;text-decoration: none;">Lihat</a>
 		</div>
 
@@ -33,8 +33,8 @@
 				<a href="ruanganwarnet.php"> Ruangan </a> 
 			</div>	
 			<div class="var-left-side">
-			<a href="halamanregistmain.php"> Registrasi </a>
-			</div>		
+				<a href="reservasimain.php"> Reservasi </a>
+			</div>			
 		</div>
 		
 		<div class="right-side">
@@ -48,11 +48,11 @@
 	</div>
 	
 	<div class="luar" id="luar">
-		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Informasi Pelanggan</h1>
+		<h1 style="font-weight: 700; margin-top: 20px; margin-left: 10px; font-family: Impact, fantasy;">Informasi Member</h1>
 		<br>
 		<table class="makanan" style="text-align: center;">
 			<tr>
-				<th>Nama Pelanggan</th>
+				<th>Nama</th>
 				<th>Username</th>
 				<th>Password</th>
 				<th>Alamat</th>
@@ -62,7 +62,7 @@
 				<?php
 				include "action/koneksi.php";
 				$query = "
-				select * from user; 
+				select * from user where status ='member'; 
 				";
 				$result = mysqli_query($link, $query) or die(mysqli_error($link));
 				while ($row = mysqli_fetch_array($result)) {
@@ -74,14 +74,14 @@
 						<td><?php echo $row['alamat']; ?></td>
 						<td><a href='editmember.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-success'>
 							<span class='glyphicon glyphicon-edit'></span>Edit</button></a>
-							<a href='action/aksideletekost.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-danger'>
+							<a href='action/aksideletemember.php?idpelanggan=<?php echo $row['idpelanggan'] ?>' class='btn btn-danger'>
 								<span class='glyphicon glyphicon-remove-sign'>Delete</button></a></td>
 								<?php
 							}
 							?>
 						</tbody>
 					</table>
-				<a href="action/logout.php" class="login" style="margin:10px;"><span>View More</span></a>
+					<a href="tambahmember.php" class="login" style="margin:10px;"><span>Tambah Member</span></a>
 		
 	</div>
 	 <footer class="site-footer">
