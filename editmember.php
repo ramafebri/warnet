@@ -52,8 +52,8 @@ while ($res = mysqli_fetch_array($query)) {
 <body>
 
     <div class="wrapper">
-        <h2 >Edit Pelanggan</h2>
-        <p>Please fill this form to edit kostan.</p>
+        <h2 >Edit Info Pelanggan</h2>
+        <p>Please fill this form to edit Pelanggan.</p>
         <form action=" action/aksieditmember.php?id=<?php echo  $idpelanggan;  ?>" method="post">
             <div class="form-group ">
                 <label>ID Pelanggan</label>
@@ -84,7 +84,7 @@ while ($res = mysqli_fetch_array($query)) {
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
+            <p>AN</p>
         </form>
     </div>    
 </body>

@@ -40,8 +40,8 @@
     <body>
 
         <div class="wrapper">
-            <h2 >Registrasi Pelanggan</h2>
-            <p>Please fill this form to add new kostan.</p>
+            <h2 >Reservasi Main Pelanggan</h2>
+            <p>Please fill this form to add new reservasi.</p>
             <form action=" action/aksitambahreservasi.php" method="post">
                 <div class="form-group ">
                     <label>Nama</label>
@@ -63,7 +63,7 @@
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
-                <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
+                <p>AN</p>
             </form>
         </div>    
     </body>

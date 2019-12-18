@@ -41,7 +41,7 @@
 
     <div class="wrapper">
         <h2 >Tambah Pelanggan</h2>
-        <p>Please fill this form to add new Room.</p>
+        <p>Please fill this form to add new Pelanggan.</p>
         <form action=" action/aksitambahmember.php" method="post">
             <div class="form-group ">
                 <label>Nama Pelanggan</label>

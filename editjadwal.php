@@ -73,7 +73,7 @@ while ($res = mysqli_fetch_array($query)) {
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="halamanlogin.php">Login here</a>.</p>
+            <p>AN</p>
         </form>
     </div>    
 </body>
